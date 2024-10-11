@@ -28,7 +28,10 @@
       "favicon": "./assets/icons/icon-32.png"
     },
     "extra": {
-      "projectId": "ede6657c-16e5-40e6-a2a3-45af46ebd8da"
+      "projectId": "ede6657c-16e5-40e6-a2a3-45af46ebd8da",
+      "eas": {
+        "projectId": "ede6657c-16e5-40e6-a2a3-45af46ebd8da"
+      }
     },
     "plugins": [
       "expo-router"
