@@ -1,37 +1,77 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { View, Text, Image } from "react-native";
+import { Tabs } from "expo-router";
 
-import { TabBarIcon } from '@/components/navigation/TabBarIcon';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/useColorScheme';
+import { icons } from "../../constants";
 
-export default function TabLayout() {
-  const colorScheme = useColorScheme();
+const TabIcon = ({ icon, color, name, focused }) => {
+  return (
+    <View className="items-center justify-center gap-2 my-4">
+      <Image
+        source={icon}
+        resizeMode="contain"
+        tintColor={color}
+        className="w-6 h-6"
+      />
+      <Text
+        className={`${focused ? "font-psemibold" : "font-pregular"} text-xs`}
+        style={{ color: color }}
+      >
+        {name}
+      </Text>
+    </View>
+  );
+};
 
+const TabsLayout = () => {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme ?? 'light'].tint,
-        headerShown: false,
-      }}>
-      <Tabs.Screen
-        name="index"
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: "#03A8FF",
+        tabBarInactiveTintColor: "#cdcde0",
+        tabBarStyle: {
+          backgroundColor: "#091622",
+          borderTopWidth: 1,
+          borderTopColor: "#232533",
+          height: 84,
+        },
+      }}
+    >
+      {/* <Tabs.Screen
+        name="anime"
         options={{
-          title: 'Home',
+          title: "Anime",
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'home' : 'home-outline'} color={color} />
+            <TabIcon
+              icon={icons.home}
+              color={color}
+              name="Anime"
+              focused={focused}
+            />
           ),
         }}
-      />
+      /> */}
+
       <Tabs.Screen
-        name="explore"
+        name="character"
         options={{
-          title: 'Explore',
+          title: "Character Quiz",
+          headerTintColor: "#fff",
+          headerStyle: {
+            backgroundColor: "#091622",
+          },
           tabBarIcon: ({ color, focused }) => (
-            <TabBarIcon name={focused ? 'code-slash' : 'code-slash-outline'} color={color} />
+            <TabIcon
+              icon={icons.home}
+              color={color}
+              name="Character"
+              focused={focused}
+            />
           ),
         }}
       />
     </Tabs>
   );
-}
+};
+
+export default TabsLayout;

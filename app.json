@@ -1,11 +1,11 @@
 {
   "expo": {
-    "name": "aniquiz",
+    "name": "AniQuiz",
     "slug": "aniquiz",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
-    "scheme": "myapp",
+    "icon": "./assets/icons/icon-32.png",
+    "scheme": "aniquiz",
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
@@ -17,14 +17,15 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/icons/apple-touch-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "ca.tweetzy.aniquiz"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/favicon.png"
+      "favicon": "./assets/icons/icon-32.png"
     },
     "plugins": [
       "expo-router"
